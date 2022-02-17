@@ -1,0 +1,135 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 20;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+    position: fixed;
+    top: 20vh;
+    left: 5%;
+    width: 90%;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    z-index: 30;
+}
+
+.modal img {
+    width: 100%;
+    margin-bottom: 4%;
+    max-height: 50vh;
+    border-radius: 14px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    padding-bottom: 2%;
+    border-bottom: 1px solid gray;
+
+}
+
+.modal div h5 {
+    letter-spacing: 1px;
+}
+
+.modal button {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 2% 4%;
+    font-size: 20px;
+    margin-top: 1rem;
+
+
+
+}
+
+.buttonContainer {
+    text-align: center;
+}
+
+@media(min-width:500px) {
+    .modal {
+        top: 5vh;
+        left: 12.5%;
+        width: 75%;
+
+        padding: 2rem;
+    }
+}
+
+@media (min-width:1024px) {
+    .modal {
+        top: 5vh;
+        left: 12.5%;
+        width: 75%;
+
+        padding: 2rem;
+    }
+
+    .modal img {
+        margin-bottom: 2%;
+
+
+    }
+
+    .modal div {
+        font-size: 18px;
+    }
+
+    .modal div h5 {
+        font-size: 18px;
+    }
+
+    .modal button {
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 7px;
+        padding: 2% 4%;
+        font-size: 20px;
+
+        margin-top: 2rem;
+
+
+    }
+
+    .modal button:hover {
+        cursor: pointer;
+        background-color: gray;
+        color: white;
+        border-color: white;
+    }
+
+    .buttonContainer {
+        text-align: center;
+    }
+
+}
+
+@media(min-width:1200px) {
+    .modal {
+        padding: 2rem 4rem;
+    }
+
+
+}
+
+@media(min-width:1300px) {
+    .modal {
+
+        top: 5vh;
+        left: 20%;
+        width: 60%;
+
+        padding: 2rem 5rem;
+
+    }
+}

@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { WrappedMap } from "./components/map/map";
+import styles from "./App.module.css";
+import OptionsList from "./components/optionsList/optionsList/optionsList";
 
-function App() {
+const geoApiKey = "AIzaSyBNLn6PnTTdRTguxUiyiNPJIoufQMjJlVc";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div>
+      <div className={styles.wrapper}>
+        <WrappedMap
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${geoApiKey}`}
+          loadingElement={<div />}
+          containerElement={
+            <div
+              className={styles.map}
+              // style={{ height: `60vh`, width: "100%" }}
+            />
+          }
+          mapElement={<div style={{ height: `100%` }} />}
         >
-          Learn React
-        </a>
-      </header>
+          {" "}
+        </WrappedMap>
+      </div>
+
+      <OptionsList></OptionsList>
     </div>
   );
-}
-
+};
 export default App;

@@ -1,0 +1,29 @@
+.map {
+    border: 4px solid #141010;
+    width: 100%;
+    height: 60vh;
+
+
+}
+
+
+
+@media (min-width:1024px) {
+    .map {
+        width: 80%;
+        margin: 5vh 0;
+
+
+
+    }
+
+    .wrapper {
+        display: flex;
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+
+
+    }
+
+}
