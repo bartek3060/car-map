@@ -70,7 +70,7 @@ export const CarContextProvider = (props) => {
       setCarData((prevState) => [...prevState, ...data]);
       setCarDataToDisplay((prevState) => [...prevState, ...data]);
     } catch {
-      console.log("something went wrong");
+      console.log("something went wrong ");
       return;
     }
   }
