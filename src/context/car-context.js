@@ -58,45 +58,17 @@ export const CarContextProvider = (props) => {
   async function getData() {
     try {
       const response = await fetch(
-        "https://dev.vozilla.pl/api-client-portal/map?objectType=VEHICLE"
+        "https://cars-4ba85-default-rtdb.firebaseio.com/objects.json"
       );
+      console.log(response);
+
       if (!response.ok) {
         new Error("Failed to get data");
       }
       const data = await response.json();
-      console.log(data.objects);
-      setCarData((prevState) => [
-        {
-          location: {
-            latitude: 52.19551617022,
-            longitude: 20.935428619366,
-          },
-          id: "c1",
-          status: "UNAVAILABLE",
-          batteryLevelPct: 51,
-          type: "Car",
-          rangeKm: 50,
-          platesNumber: "WA1912",
-        },
-        ...prevState,
-        ...data.objects,
-      ]);
-      setCarDataToDisplay((prevState) => [
-        {
-          location: {
-            latitude: 52.19551617022,
-            longitude: 20.935428619366,
-          },
-          id: "c1",
-          status: "UNAVAILABLE",
-          batteryLevelPct: 51,
-          platesNumber: "WA1912",
-          type: "Car",
-          rangeKm: 50,
-        },
-        ...prevState,
-        ...data.objects,
-      ]);
+      console.log(data);
+      setCarData((prevState) => [...prevState, ...data]);
+      setCarDataToDisplay((prevState) => [...prevState, ...data]);
     } catch {
       console.log("something went wrong");
       return;
