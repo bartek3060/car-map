@@ -59,6 +59,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    z-index: 50;
 
 
 
@@ -73,6 +74,7 @@
     padding-left: 0%;
     height: 10vh;
     padding: 3vh 0 3vh 0;
+    z-index: 50;
 }
 
 .option-list li.closeLi button {
@@ -87,6 +89,7 @@
     padding: 3vh 0 3vh 0;
     text-align: center;
     height: 10vh;
+    z-index: 50;
 }
 
 .option-list li button {
@@ -102,6 +105,7 @@
     letter-spacing: 1px;
     border-radius: 5px;
     margin: 2% 0;
+    z-index: 50;
 }
 
 
@@ -151,7 +155,7 @@
 
     }
 
-    .closeLi {
+    li.closeLi {
         display: none;
         bottom: 0;
     }

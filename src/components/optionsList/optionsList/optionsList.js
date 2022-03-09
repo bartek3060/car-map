@@ -33,7 +33,7 @@ function OptionsList(props) {
       {props.active && (
         <ul
           onClick={() => props.setActive((prev) => !prev)}
-          className={`${styles["option-list"]} ${!props.active ? "hide" : ""}`}
+          className={`${styles["option-list"]} `}
         >
           <li>
             <button onClick={ctx.showAll}> All </button>{" "}
