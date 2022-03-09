@@ -1,111 +1,110 @@
 {
     "objects": [{
-        "discriminator": "vehicle",
-        "platesNumber": "WZPV001",
-        "sideNumber": "Z3-PVAN-01",
-        "color": "White",
-        "type": "TRUCK",
-        "picture": {
-            "id": "e7ace1de-ab7f-4120-922d-23441a041bd9",
-            "name": "e7ace1de-ab7f-4120-922d-23441a041bd9",
-            "extension": null,
-            "contentType": null
+            "location": {
+                "latitude": 52.11231007022,
+                "longitude": 20.922458619366
+            },
+            "id": "c1",
+            "status": "AVAILABLE",
+            "batteryLevelPct": 100,
+            "platesNumber": "WI1912",
+            "type": "Car",
+            "rangeKm": 1000
+        }, {
+            "location": {
+                "latitude": 52.22151617022,
+                "longitude": 20.378428619366
+            },
+            "id": "c2",
+            "status": "AVAILABLE",
+            "batteryLevelPct": 90,
+            "platesNumber": "WE1234",
+            "type": "Car",
+            "rangeKm": 600
+        }, {
+            "location": {
+                "latitude": 52.19555555022,
+                "longitude": 20.935444419366
+            },
+            "id": "c3",
+            "status": "AVAILABLE",
+            "batteryLevelPct": 80,
+            "platesNumber": "WA9999",
+            "type": "Car",
+            "rangeKm": 500
         },
-        "rangeKm": 193,
-        "batteryLevelPct": 98,
-        "reservationEnd": null,
-        "reservation": null,
-        "status": "AVAILABLE",
-        "locationDescription": null,
-        "address": null,
-        "mapColor": {
-            "rgb": "ffffff",
-            "alpha": 0.5
+        {
+            "location": {
+                "latitude": 52.14451617022,
+                "longitude": 20.935425559366
+            },
+            "id": "c4",
+            "status": "AVAILABLE",
+            "batteryLevelPct": 71,
+            "platesNumber": "WA4442",
+            "type": "Car",
+            "rangeKm": 300
         },
-        "promotion": null,
-        "id": "00000000-0000-0000-0005-000000000003",
-        "name": "Enigma Python Van",
-        "description": null,
-        "location": {
-            "latitude": 52.1935161702226,
-            "longitude": 20.9304286193486
+        {
+            "location": {
+                "latitude": 52.16651617022,
+                "longitude": 20.966428619366
+            },
+            "id": "c5",
+            "status": "AVAILABLE",
+            "batteryLevelPct": 50,
+            "platesNumber": "SK1912",
+            "type": "Car",
+            "rangeKm": 250
         },
-        "metadata": null
-    }, {
-        "discriminator": "vehicle",
-        "platesNumber": "WZ8748W",
-        "sideNumber": "Z1-WH-01",
-        "color": "White",
-        "type": "CAR",
-        "picture": {
-            "id": "9818875c-9e8b-4dc5-98ae-5909a8d632e2",
-            "name": "9818875c-9e8b-4dc5-98ae-5909a8d632e2",
-            "extension": null,
-            "contentType": null
+        {
+            "location": {
+                "latitude": 52.19881617022,
+                "longitude": 20.937728619366
+            },
+            "id": "c6",
+            "status": "AVAILABLE",
+            "batteryLevelPct": 40,
+            "platesNumber": "TK1912",
+            "type": "Car",
+            "rangeKm": 200
         },
-        "rangeKm": 134,
-        "batteryLevelPct": 86,
-        "reservationEnd": null,
-        "reservation": null,
-        "status": "AVAILABLE",
-        "locationDescription": null,
-        "address": null,
-        "mapColor": {
-            "rgb": "ffffff",
-            "alpha": 0.5
+        {
+            "location": {
+                "latitude": 52.19599917022,
+                "longitude": 20.935488619366
+            },
+            "id": "c7",
+            "status": "UNAVAILABLE",
+            "batteryLevelPct": 5,
+            "platesNumber": "KR1912",
+            "type": "Car",
+            "rangeKm": 10
         },
-        "promotion": null,
-        "id": "00000000-0000-0000-0005-000000000001",
-        "name": "Nissan Leaf White",
-        "description": null,
-        "location": {
-            "latitude": 52.193275,
-            "longitude": 20.930372
+        {
+            "location": {
+                "latitude": 52.16781617022,
+                "longitude": 20.956428619366
+            },
+            "id": "c8",
+            "status": "AVAILABLE",
+            "batteryLevelPct": 20,
+            "platesNumber": "WE1512",
+            "type": "Car",
+            "rangeKm": 150
         },
-        "metadata": null
-    }, {
-        "discriminator": "vehicle",
-        "platesNumber": "WZPC001",
-        "sideNumber": "Z4-PCAR-01",
-        "color": "White",
-        "type": "CAR",
-        "picture": {
-            "id": "61133b4c-2e9b-4da9-b22c-009baad8eadd",
-            "name": "61133b4c-2e9b-4da9-b22c-009baad8eadd",
-            "extension": null,
-            "contentType": null
-        },
-        "rangeKm": 193,
-        "batteryLevelPct": 98,
-        "reservationEnd": null,
-        "reservation": null,
-        "status": "AVAILABLE",
-        "locationDescription": null,
-        "address": null,
-        "mapColor": {
-            "rgb": "ffffff",
-            "alpha": 0.5
-        },
-        "promotion": null,
-        "id": "00000000-0000-0000-0005-000000000004",
-        "name": "Enigma Python Car",
-        "description": null,
-        "location": {
-            "latitude": 52.193891367697,
-            "longitude": 20.930564789789
-        },
-        "metadata": null
-    }, {
-        "location": {
-            "latitude": 52.19551617022,
-            "longitude": 20.935428619366
-        },
-        "id": "c1",
-        "status": "UNAVAILABLE",
-        "batteryLevelPct": 51,
-        "platesNumber": "WA1912",
-        "type": "Car",
-        "rangeKm": 50
-    }]
+        {
+            "location": {
+                "latitude": 52.19551617022,
+                "longitude": 20.935428619366
+            },
+            "id": "c9",
+            "status": "UNAVAILABLE",
+            "batteryLevelPct": 10,
+            "platesNumber": "WA1234",
+            "type": "Car",
+            "rangeKm": 100
+        }
+    ]
 
 }

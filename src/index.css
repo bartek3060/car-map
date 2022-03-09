@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 body {
@@ -13,6 +14,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* background-color: lightgray; */
   background-image: url('./assets/images/background.jpg');
+
 }
 
 code {

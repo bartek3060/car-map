@@ -9,7 +9,7 @@ function Map() {
 
   return (
     <GoogleMap
-      defaultZoom={16}
+      defaultZoom={14}
       defaultCenter={{
         lat: 52.1935161702226,
         lng: 20.9304286193486,
@@ -27,7 +27,7 @@ function Map() {
             rangeKm={car.rangeKm}
             platesNumber={car.platesNumber}
             type={car.type}
-            image={ctx.carImages[i]}
+            image={ctx.carImages[Math.floor(Math.random() * 4)]}
           ></SingleCar>
         ))}{" "}
     </GoogleMap>

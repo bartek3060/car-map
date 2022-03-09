@@ -1,20 +1,41 @@
 .map {
     border: 4px solid #141010;
     width: 100%;
-    height: 60vh;
+    height: 80vh;
 
 
+}
+
+.options {
+    width: 10vh;
+}
+
+.header {
+    text-align: center;
+    color: aliceblue;
+    font-family: 'Roboto', sans-serif;
+    font-size: 23px;
+    padding: 3vh 0;
+    height: 10vh;
 }
 
 
 
 @media (min-width:1024px) {
     .map {
-        width: 80%;
-        margin: 5vh 0;
+        width: 100%;
+        margin: 0vh 0;
+        height: 90vh;
+    }
 
-
-
+    .header {
+        text-align: center;
+        color: aliceblue;
+        font-family: 'Roboto', sans-serif;
+        font-size: 32px;
+        line-height: 6vh;
+        padding: 2vh 0;
+        height: 10vh;
     }
 
     .wrapper {
