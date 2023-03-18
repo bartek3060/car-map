@@ -24,32 +24,32 @@ export const CarContextProvider = (props) => {
     const activeData = carData
       .concat()
       .filter((car) => car.batteryLevelPct >= 70);
-    setCarDataToDisplay((prevstate) => [...activeData]);
+    setCarDataToDisplay(() => [...activeData]);
   };
   const showMediumBatery = () => {
     const activeData = carData
       .concat()
       .filter((car) => car.batteryLevelPct >= 50);
-    setCarDataToDisplay((prevstate) => [...activeData]);
+    setCarDataToDisplay(() => [...activeData]);
   };
   const showLowBatery = () => {
     const activeData = carData
       .concat()
       .filter((car) => car.batteryLevelPct > 0 && car.batteryLevelPct < 50);
-    setCarDataToDisplay((prevstate) => [...activeData]);
+    setCarDataToDisplay(() => [...activeData]);
   };
 
   const showActive = () => {
     const activeData = carData
       .concat()
       .filter((car) => car.status === "AVAILABLE");
-    setCarDataToDisplay((prevstate) => [...activeData]);
+    setCarDataToDisplay(() => [...activeData]);
   };
   const showNoAcive = () => {
     const activeData = carData
       .concat()
       .filter((car) => car.status !== "AVAILABLE");
-    setCarDataToDisplay((prevstate) => [...activeData]);
+    setCarDataToDisplay(() => [...activeData]);
   };
   const showAll = () => {
     setCarDataToDisplay([...carData]);
@@ -58,20 +58,17 @@ export const CarContextProvider = (props) => {
   async function getData() {
     try {
       const response = await fetch(
-        "https://cars-4ba85-default-rtdb.firebaseio.com/objects.json"
+        "https://car-map-72b6a-default-rtdb.firebaseio.com/objects.json"
       );
-      console.log(response);
 
       if (!response.ok) {
         new Error("Failed to get data");
       }
       const data = await response.json();
-      console.log(data);
       setCarData((prevState) => [...prevState, ...data]);
       setCarDataToDisplay((prevState) => [...prevState, ...data]);
     } catch {
       console.log("something went wrong ");
-      return;
     }
   }
   useEffect(() => {
