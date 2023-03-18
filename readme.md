@@ -11,7 +11,7 @@ Typescript, and CSS.
 
 Project is in development. I want to add better error handling, loading states and also unit and functional tests.
 
-## Project Screen Shot(s)
+## Project Screen Shots
 
 Main view
 
