@@ -2,8 +2,9 @@ import React, { useContext } from "react";
 import CarContext from "../../../context/car-context";
 import { Backdrop } from "../../popUp/PopUp";
 import styles from "./optionsList.module.css";
+import { OptionsListProps } from "./options-list-props";
 
-function OptionsList(props) {
+function OptionsList(props: OptionsListProps) {
   const ctx = useContext(CarContext);
   return (
     <>
@@ -36,17 +37,17 @@ function OptionsList(props) {
           className={`${styles["option-list"]} `}
         >
           <li>
-            <button onClick={ctx.showAll}> All </button>{" "}
-            <button onClick={ctx.showActive}> Available </button>{" "}
-            <button onClick={ctx.showNoAcive}> Unavailable </button>{" "}
+            <button onClick={ctx?.showAll}> All</button>{" "}
+            <button onClick={ctx?.showActive}> Available</button>{" "}
+            <button onClick={ctx?.showNoAcive}> Unavailable</button>{" "}
           </li>{" "}
           <li>
-            <button onClick={ctx.showHighBatery}> High Battery </button>{" "}
-            <button onClick={ctx.showMediumBatery}> Middle battery </button>{" "}
-            <button onClick={ctx.showLowBatery}> Low battery </button>{" "}
+            <button onClick={ctx?.showHighBatery}> High Battery</button>{" "}
+            <button onClick={ctx?.showMediumBatery}> Middle battery</button>{" "}
+            <button onClick={ctx?.showLowBatery}> Low battery</button>{" "}
           </li>{" "}
           <li className={styles.closeLi}>
-            <button> Hide Options </button>{" "}
+            <button> Hide Options</button>{" "}
           </li>{" "}
         </ul>
       )}{" "}

@@ -1,0 +1,118 @@
+{
+  "objects": [
+    {
+      "position": {
+        "lat": 52.11231007022,
+        "lng": 20.922458619366
+      },
+      "image": "https://rentdreamcar.pl/wp-content/uploads/2022/06/pakiety-bmw.jpg",
+      "id": "c1",
+      "status": "available",
+      "batteryLevelPct": 100,
+      "platesNumber": "WI1912",
+      "type": "Car",
+      "rangeKm": 1000
+    },
+    {
+      "position": {
+        "lat": 52.22151617022,
+        "lng": 20.378428619366
+      },
+      "id": "c2",
+      "image": "https://hips.hearstapps.com/hmg-prod/images/2024-bmw-5-series-101-1676576715.jpg",
+      "status": "available",
+      "batteryLevelPct": 90,
+      "platesNumber": "WE1234",
+      "type": "Car",
+      "rangeKm": 600
+    },
+    {
+      "position": {
+        "lat": 52.19555555022,
+        "lng": 20.935444419366
+      },
+      "image": "https://www.bmw-klub.pl/wp-content/uploads/2023/02/2023_bmw_m2_coupe_base_fq_oem_9_1280x855-720x340.jpg",
+      "id": "c3",
+      "status": "available",
+      "batteryLevelPct": 80,
+      "platesNumber": "WA9999",
+      "type": "Car",
+      "rangeKm": 500
+    },
+    {
+      "position": {
+        "lat": 52.14451617022,
+        "lng": 20.935425559366
+      },
+      "id": "c4",
+      "image": "https://storage.carsmile.pl/uploads/2022/05/thumb_bmw_seria_3_limo.jpg",
+      "status": "available",
+      "batteryLevelPct": 71,
+      "platesNumber": "WA4442",
+      "type": "Car",
+      "rangeKm": 300
+    },
+    {
+      "position": {
+        "lat": 52.16651617022,
+        "lng": 20.966428619366
+      },
+      "id": "c5",
+      "image": "https://image.ceneostatic.pl/data/products/135486858/i-bmw-seria-3-m-sport-nowy-model.jpg",
+      "status": "available",
+      "batteryLevelPct": 50,
+      "platesNumber": "SK1912",
+      "type": "Car",
+      "rangeKm": 250
+    },
+    {
+      "position": {
+        "lat": 52.19881617022,
+        "lng": 20.937728619366
+      },
+      "id": "c6",
+      "image": "https://i.iplsc.com/1/000FDN14QDM2DOF0-C321-F4.jpg",
+      "status": "available",
+      "batteryLevelPct": 40,
+      "platesNumber": "TK1912",
+      "type": "Car",
+      "rangeKm": 200
+    },
+    {
+      "position": {
+        "lat": 52.19599917022,
+        "lng": 20.935488619366
+      },
+      "id": "c7",
+      "status": "unavailable",
+      "batteryLevelPct": 5,
+      "platesNumber": "KR1912",
+      "type": "Car",
+      "rangeKm": 10
+    },
+    {
+      "position": {
+        "lat": 52.16781617022,
+        "lng": 20.956428619366
+      },
+      "id": "c8",
+      "status": "unavailable",
+      "batteryLevelPct": 20,
+      "platesNumber": "WE1512",
+      "type": "Car",
+      "rangeKm": 150
+    },
+    {
+      "position": {
+        "lat": 52.19551617022,
+        "lng": 20.935428619366
+      },
+      "id": "c9",
+      "status": "unavailable",
+      "batteryLevelPct": 10,
+      "platesNumber": "WA1234",
+      "type": "Car",
+      "rangeKm": 100
+    }
+  ]
+}

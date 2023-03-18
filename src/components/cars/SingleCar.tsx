@@ -3,9 +3,12 @@ import { Marker } from "react-google-maps";
 import greenmarker from "../../assets/images/green_marker.png";
 import redMarker from "../../assets/images/red_marker.png";
 import PopUp from "../popUp/PopUp";
+import { StatusEnum } from "../../shared/enums/status.enum";
+import { SingleCarProps } from "./single-car-props";
 
-function SingleCar(props) {
-  const status = props.status === "AVAILABLE" ? greenmarker : redMarker;
+function SingleCar(props: SingleCarProps) {
+  const status =
+    props.status === StatusEnum.AVAILABLE ? greenmarker : redMarker;
   const changeModalStatus = () => {
     setModalStatus((prevStatus) => !prevStatus);
   };

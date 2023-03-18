@@ -1,37 +1,29 @@
-import React, { useState, useEffect } from "react";
-import car2 from "../assets/truck.png";
-import car1 from "../assets/images/bmw.jpg";
-import car3 from "../assets/images/audi.jpg";
-import car4 from "../assets/images/honda.jpg";
-const carImages = [car1, car2, car3, car4];
+import React, { useEffect, useState } from "react";
+import { CarContextInterface } from "./car-context-interface";
+import { CarModel } from "../shared/models/car.model";
+import { StatusEnum } from "../shared/enums/status.enum";
 
-const CarContext = React.createContext({
-  carDataToDisplay: [],
-  carImages: [],
-  showAll: () => {},
-  showActive: () => {},
-  showNoAcive: () => {},
-  showHighBatery: () => {},
-  showMediumBatery: () => {},
-  showLowBatery: () => {},
-});
+const CarContext = React.createContext<CarContextInterface | null>(null);
 export default CarContext;
 
-export const CarContextProvider = (props) => {
-  const [carData, setCarData] = useState([]);
-  const [carDataToDisplay, setCarDataToDisplay] = useState([]);
+export const CarContextProvider: React.FC<React.ReactNode> = ({ children }) => {
+  const [carData, setCarData] = useState<CarModel[]>([]);
+  const [carDataToDisplay, setCarDataToDisplay] = useState<CarModel[]>([]);
+
   const showHighBatery = () => {
     const activeData = carData
       .concat()
       .filter((car) => car.batteryLevelPct >= 70);
     setCarDataToDisplay(() => [...activeData]);
   };
+
   const showMediumBatery = () => {
     const activeData = carData
       .concat()
       .filter((car) => car.batteryLevelPct >= 50);
     setCarDataToDisplay(() => [...activeData]);
   };
+
   const showLowBatery = () => {
     const activeData = carData
       .concat()
@@ -42,15 +34,17 @@ export const CarContextProvider = (props) => {
   const showActive = () => {
     const activeData = carData
       .concat()
-      .filter((car) => car.status === "AVAILABLE");
+      .filter((car) => car.status === StatusEnum.AVAILABLE);
     setCarDataToDisplay(() => [...activeData]);
   };
+
   const showNoAcive = () => {
     const activeData = carData
       .concat()
-      .filter((car) => car.status !== "AVAILABLE");
+      .filter((car) => car.status !== StatusEnum.AVAILABLE);
     setCarDataToDisplay(() => [...activeData]);
   };
+
   const showAll = () => {
     setCarDataToDisplay([...carData]);
   };
@@ -64,21 +58,24 @@ export const CarContextProvider = (props) => {
       if (!response.ok) {
         new Error("Failed to get data");
       }
+
       const data = await response.json();
+
       setCarData((prevState) => [...prevState, ...data]);
       setCarDataToDisplay((prevState) => [...prevState, ...data]);
     } catch {
       console.log("something went wrong ");
     }
   }
+
   useEffect(() => {
     getData();
   }, []);
+
   return (
     <CarContext.Provider
       value={{
         carDataToDisplay: carDataToDisplay,
-        carImages: carImages,
         showAll: showAll,
         showActive: showActive,
         showNoAcive: showNoAcive,
@@ -88,7 +85,7 @@ export const CarContextProvider = (props) => {
       }}
     >
       {" "}
-      {props.children}{" "}
+      {children}{" "}
     </CarContext.Provider>
   );
 };
