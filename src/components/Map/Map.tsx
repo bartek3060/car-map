@@ -6,7 +6,7 @@ function Map() {
   const MAP_ZOOM_LEVEL = 14;
   const INITIAL_MAP_POSITION = { lat: 52.1935161702226, lng: 20.9304286193486 };
 
-  return (
+   return (
     <GoogleMap
       defaultZoom={MAP_ZOOM_LEVEL}
       defaultCenter={INITIAL_MAP_POSITION}
@@ -16,4 +16,4 @@ function Map() {
   );
 }
 
-export const WrappedMap = withScriptjs(withGoogleMap(Map));
+ export const WrappedMap = withScriptjs(withGoogleMap(Map));
