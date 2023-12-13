@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import { App } from "./App";
 import { CarContextProvider } from "./context/car-context";
 
 ReactDOM.render(
   <CarContextProvider>
-    <App></App>
+    <App />
   </CarContextProvider>,
   document.getElementById("root")
 );

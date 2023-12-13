@@ -1,39 +1,30 @@
 import React, { useState } from "react";
-import { WrappedMap } from "./components/map/map";
+import { WrappedMap } from "./components/Map/Map";
 import styles from "./App.module.css";
-import OptionsList from "./components/optionsList/optionsList/optionsList";
+import Filters from "./components/Filters/Filters";
 
 const geoApiKey = process.env.REACT_APP_MAPS_API_KEY;
 
-const App = () => {
-  const [showOptions, setShowOptions] = useState<boolean>(false);
+export const App = () => {
+  const [isFilterWindowOpened, setIsFilterWindowOpened] = useState(false);
+  const googleMapsUrl=`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${geoApiKey}`
+
   return (
     <div>
-      <h1 className={styles.header}> Hi, check our cars for rent! </h1>{" "}
+      <h1 className={styles.header}> Hi, check our cars for rent! </h1>
       <div className={styles.wrapper}>
         <WrappedMap
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${geoApiKey}`}
-          loadingElement={<div />}
+          googleMapURL={googleMapsUrl}
+          loadingElement={<div/>}
           containerElement={<div className={styles.map} />}
-          mapElement={
-            <div
-              style={{
-                height: `100%`,
-              }}
-            />
-          }
-        >
-          {" "}
-        </WrappedMap>{" "}
-      </div>{" "}
-      <OptionsList
+          mapElement={<div style={{ height: `100%` }} />}
+        />
+      </div>
+      <Filters
         className={styles.options}
-        setActive={setShowOptions}
-        active={showOptions}
-      >
-        {" "}
-      </OptionsList>{" "}
+        setActive={setIsFilterWindowOpened}
+        active={isFilterWindowOpened}
+      />
     </div>
   );
 };
-export default App;

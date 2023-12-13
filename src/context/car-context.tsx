@@ -7,64 +7,53 @@ const CarContext = React.createContext<CarContextInterface | null>(null);
 export default CarContext;
 
 export const CarContextProvider: React.FC<React.ReactNode> = ({ children }) => {
-  const [carData, setCarData] = useState<CarModel[]>([]);
-  const [carDataToDisplay, setCarDataToDisplay] = useState<CarModel[]>([]);
+  const [allCars, setAllCars] = useState<CarModel[]>([]);
+  const [filteredCars, setFilteredCars] = useState<CarModel[]>([]);
 
-  const showHighBatery = () => {
-    const activeData = carData
-      .concat()
-      .filter((car) => car.batteryLevelPct >= 70);
-    setCarDataToDisplay(() => [...activeData]);
+  const displayCarsWithHighBatteryLevel = () => {
+    const activeData = allCars.filter((car) => car.batteryLevelPct >= 70);
+    setFilteredCars(activeData);
   };
 
-  const showMediumBatery = () => {
-    const activeData = carData
-      .concat()
-      .filter((car) => car.batteryLevelPct >= 50);
-    setCarDataToDisplay(() => [...activeData]);
+  const displayCarsWithMediumBatteryLevel = () => {
+    const activeData = allCars.filter((car) => car.batteryLevelPct >= 50);
+    setFilteredCars(activeData);
   };
 
-  const showLowBatery = () => {
-    const activeData = carData
-      .concat()
-      .filter((car) => car.batteryLevelPct > 0 && car.batteryLevelPct < 50);
-    setCarDataToDisplay(() => [...activeData]);
+  const displayCarsWithLowBatteryLevel = () => {
+    const activeData = allCars.filter((car) => car.batteryLevelPct < 50);
+    setFilteredCars(activeData);
   };
 
-  const showActive = () => {
-    const activeData = carData
-      .concat()
-      .filter((car) => car.status === StatusEnum.AVAILABLE);
-    setCarDataToDisplay(() => [...activeData]);
+  const displayAvailableCars = () => {
+    const activeData = allCars.filter(
+      (car) => car.status === StatusEnum.AVAILABLE
+    );
+    setFilteredCars(activeData);
   };
 
-  const showNoAcive = () => {
-    const activeData = carData
-      .concat()
-      .filter((car) => car.status !== StatusEnum.AVAILABLE);
-    setCarDataToDisplay(() => [...activeData]);
+  const displayUnavailableCars = () => {
+    const activeData = allCars.filter(
+      (car) => car.status !== StatusEnum.AVAILABLE
+    );
+    setFilteredCars(activeData);
   };
 
-  const showAll = () => {
-    setCarDataToDisplay([...carData]);
+  const displayAllCars = () => {
+    setFilteredCars(allCars);
   };
 
   async function getData() {
     try {
-      const response = await fetch(
+      const carsResponse = await fetch(
         "https://car-map-72b6a-default-rtdb.firebaseio.com/objects.json"
       );
 
-      if (!response.ok) {
-        new Error("Failed to get data");
-      }
-
-      const data = await response.json();
-
-      setCarData((prevState) => [...prevState, ...data]);
-      setCarDataToDisplay((prevState) => [...prevState, ...data]);
+      const carsData = await carsResponse.json();
+      setAllCars((prevState) => [...prevState, ...carsData]);
+      setFilteredCars((prevState) => [...prevState, ...carsData]);
     } catch {
-      console.log("something went wrong ");
+      console.error("something went wrong ");
     }
   }
 
@@ -75,17 +64,16 @@ export const CarContextProvider: React.FC<React.ReactNode> = ({ children }) => {
   return (
     <CarContext.Provider
       value={{
-        carDataToDisplay: carDataToDisplay,
-        showAll: showAll,
-        showActive: showActive,
-        showNoAcive: showNoAcive,
-        showHighBatery: showHighBatery,
-        showMediumBatery: showMediumBatery,
-        showLowBatery: showLowBatery,
+        filteredCars: filteredCars,
+        displayAllCars: displayAllCars,
+        displayAvailableCars: displayAvailableCars,
+        displayUnavailableCars: displayUnavailableCars,
+        displayCarsWithHighBatteryLevel: displayCarsWithHighBatteryLevel,
+        displayCarsWithMediumBatteryLevel: displayCarsWithMediumBatteryLevel,
+        displayCarsWithLowBatteryLevel: displayCarsWithLowBatteryLevel,
       }}
     >
-      {" "}
-      {children}{" "}
+      {children}
     </CarContext.Provider>
   );
 };

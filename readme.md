@@ -1,6 +1,6 @@
 ## Project Name & Pitch
 
-Car Map
+Car GoogleMap
 
 An application used to display cars from Firebase and also filter them based on user criteria, built with React,
 Typescript, and CSS.

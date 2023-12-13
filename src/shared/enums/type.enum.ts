@@ -1,3 +1,3 @@
 export enum TypeEnum{
-    CAR='car'
+    CAR='CAR'
 }

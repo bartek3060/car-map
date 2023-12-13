@@ -10,6 +10,7 @@
 
 .modal {
     position: fixed;
+    min-height: 70%;
     top: 20vh;
     left: 5%;
     width: 90%;
@@ -20,8 +21,12 @@
     z-index: 50;
 }
 
+.modal-container{
+    height: 60%;
+}
 
 .modal img {
+    height: 100%;
     width: 100%;
     margin-bottom: 4%;
     max-height: 50vh;
@@ -30,11 +35,11 @@
 
 .container {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     font-family: 'Roboto', sans-serif;
-    padding-bottom: 2%;
     border-bottom: 1px solid gray;
-
+    padding:1% 0;
 }
 
 .modal div h5 {
@@ -48,9 +53,6 @@
     padding: 2% 4%;
     font-size: 20px;
     margin-top: 1rem;
-
-
-
 }
 
 .buttonContainer {
@@ -62,7 +64,6 @@
         top: 5vh;
         left: 12.5%;
         width: 75%;
-
         padding: 2rem;
     }
 }
@@ -72,14 +73,11 @@
         top: 5vh;
         left: 12.5%;
         width: 75%;
-
         padding: 2rem;
     }
 
     .modal img {
         margin-bottom: 2%;
-
-
     }
 
     .modal div {
@@ -96,10 +94,7 @@
         border-radius: 7px;
         padding: 2% 4%;
         font-size: 20px;
-
         margin-top: 2rem;
-
-
     }
 
     .modal button:hover {
@@ -119,18 +114,13 @@
     .modal {
         padding: 2rem 4rem;
     }
-
-
 }
 
 @media(min-width:1300px) {
     .modal {
-
         top: 5vh;
         left: 20%;
         width: 60%;
-
         padding: 2rem 5rem;
-
     }
 }
